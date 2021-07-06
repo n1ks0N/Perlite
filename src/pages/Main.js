@@ -1,8 +1,9 @@
 import React from 'react'
+import './Main.css'
 
 const Main = () => {
   return (
-    <div>
+    <div className="main__wrapper">
       <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
@@ -13,22 +14,22 @@ const Main = () => {
           <div className="carousel-item active">
             <img src="https://cdn.pixabay.com/photo/2017/09/25/02/58/autumn-2783817_960_720.jpg" className="d-block w-100" alt="..." />
             <div className="carousel-caption d-none d-md-block">
-              <h5>Метка первого слайда</h5>
-              <p>Некоторый репрезентативный заполнитель для первого слайда.</p>
+              <h5>Высококачественные материалы</h5>
+              <p>Lorem ipsum</p>
             </div>
           </div>
           <div className="carousel-item">
             <img src="https://cdn.pixabay.com/photo/2017/09/25/02/58/autumn-2783817_960_720.jpg" className="d-block w-100" alt="..." />
             <div className="carousel-caption d-none d-md-block">
-              <h5>Метка второго слайда</h5>
-              <p>Некоторый репрезентативный заполнитель для второго слайда.</p>
+              <h5>Приемлемые цены</h5>
+              <p>Lorem ipsum</p>
             </div>
           </div>
           <div className="carousel-item">
             <img src="https://cdn.pixabay.com/photo/2017/09/25/02/58/autumn-2783817_960_720.jpg" className="d-block w-100" alt="..." />
             <div className="carousel-caption d-none d-md-block">
-              <h5>Метка третьего слайда</h5>
-              <p>Некоторый репрезентативный заполнитель для третьего слайда.</p>
+              <h5>Быстрая доставка</h5>
+              <p>Lorem ipsum</p>
             </div>
           </div>
         </div>
