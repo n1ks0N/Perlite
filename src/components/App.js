@@ -1,8 +1,12 @@
 import React, { useEffect } from 'react'
 import { Route, Switch, Link } from 'react-router-dom';
 import Main from '../pages/Main'
-import './App.css';
+import About from '../pages/About';
 import logo from '../utils/images/logo.jpg'
+import './App.css';
+import Products from '../pages/Products';
+import Contacts from '../pages/Contacts';
+import Admin from './Admin';
 
 const App = () => {
   useEffect(() => {
@@ -25,9 +29,9 @@ by https://github.com/n1ks0N
         </div>
         <menu className="header__menu">
           <Link to="/"><li>Главная</li></Link>
-          <Link to=""><li>Продукция</li></Link>
-          <Link to=""><li>О нас</li></Link>
-          <Link to=""><li>Контакты</li></Link>
+          <Link to="/about"><li>О нас</li></Link>
+          <Link to="/products"><li>Продукция</li></Link>
+          <Link to="/contacts"><li>Контакты</li></Link>
         </menu>
         <div className="header__contact">
           <a href="tel:+79853637325">+79853637325</a>
@@ -36,6 +40,10 @@ by https://github.com/n1ks0N
       </header>
       <main>
         <Switch>
+          <Route path="/admin" component={Admin} />
+          <Route path="/about" component={About} />
+          <Route path="/products" component={Products} />
+          <Route path="/contacts" component={Contacts} />
           <Route path="*" component={Main} />
         </Switch>
       </main>
@@ -45,9 +53,9 @@ by https://github.com/n1ks0N
         </div>
         <menu className="footer__menu">
           <Link to="/"><li>Главная</li></Link>
-          <Link to=""><li>Продукция</li></Link>
-          <Link to=""><li>О нас</li></Link>
-          <Link to=""><li>Контакты</li></Link>
+          <Link to="/about"><li>О нас</li></Link>
+          <Link to="/products"><li>Продукция</li></Link>
+          <Link to="/contacts"><li>Контакты</li></Link>
         </menu>
         <div>
           Мы в социальных сетях:
