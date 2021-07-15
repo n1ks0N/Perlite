@@ -5,7 +5,7 @@ const About = () => {
   const { pages: { about } } = useSelector((store) => store.content)
   return (
     !!about &&
-    <div>
+    <div className="section">
       <h2 className="app__title">О нас</h2>
       <p className="about__text">{about.text}</p>
     </div>

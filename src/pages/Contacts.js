@@ -5,7 +5,7 @@ const Contacts = () => {
   const { pages: { contacts } } = useSelector((store) => store.content)
   return (
     !!contacts &&
-    <div>
+    <div className="section">
       <h2 className="app__title">Контакты</h2>
       <div className="contacts__wrapper">
         <div className="contacts__form">

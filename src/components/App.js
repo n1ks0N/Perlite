@@ -44,10 +44,10 @@ by https://github.com/n1ks0N
           <Link to="/"><img src={logo} className="header__logo_size" /></Link>
         </div>
         <menu className="header__menu">
-          <Link to="/"><li>Главная</li></Link>
-          <Link to="/about"><li>О нас</li></Link>
-          <Link to="/products"><li>Продукция</li></Link>
-          <Link to="/contacts"><li>Контакты</li></Link>
+          <Link to="/"><li className="header__menu_item">Главная</li></Link>
+          <Link to="/about"><li className="header__menu_item">О нас</li></Link>
+          <Link to="/products"><li className="header__menu_item">Продукция</li></Link>
+          <Link to="/contacts"><li className="header__menu_item">Контакты</li></Link>
         </menu>
         <div className="header__contact">
           <a href={`tel:${contacts.tel}`}>{contacts.tel}</a>
@@ -73,10 +73,7 @@ by https://github.com/n1ks0N
           <Link to="/products"><li>Продукция</li></Link>
           <Link to="/contacts"><li>Контакты</li></Link>
         </menu>
-        <div>
-          Мы в социальных сетях:
-        </div>
-        <div className="header__contact">
+        <div className="footer__contact">
           <a href={`tel:${contacts.tel}`}>{contacts.tel}</a>
           <a href={`mailto:${contacts.mail}`}>{contacts.mail}</a>
           <a href="https://kwork.ru/user/n1ks_on" target="_blank">Создание сайтов — Nikson</a>
