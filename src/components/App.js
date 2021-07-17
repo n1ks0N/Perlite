@@ -50,7 +50,7 @@ by https://github.com/n1ks0N
           <Link to="/contacts"><li className="header__menu_item">Контакты</li></Link>
         </menu>
         <div className="header__contact">
-          <a href={`tel:${contacts.tel}`}>{contacts.tel}</a>
+        <a href={`tel:${contacts.tel}`}><img src="https://img.icons8.com/ios-glyphs/30/000000/phone--v1.png"/>{contacts.tel}</a>
           <button type="button" className="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCallback">Обратный звонок</button>
         </div>
       </header>

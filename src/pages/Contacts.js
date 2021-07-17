@@ -33,8 +33,8 @@ const Contacts = () => {
         <div className="contacts__info">
           <h3>Контактные данные:</h3>
           <div className="contacts__info__items">
-            <a href={`tel:${contacts.phone}`}>{contacts.phone}</a>
-            <a href={`mailto:${contacts.email}`}>{contacts.email}</a>
+          <span><img src="https://img.icons8.com/ios-glyphs/30/000000/phone--v1.png"/>&nbsp;<a href={`tel:${contacts.phone}`}>{contacts.phone}</a></span>
+          <span><img src="https://img.icons8.com/ios-filled/24/000000/mail.png"/>&nbsp;<a href={`mailto:${contacts.email}`}>{contacts.email}</a></span>
           </div>
         </div>
       </div>
