@@ -19,7 +19,7 @@ const Main = () => {
             {main.map((item, i) => 
               <div className={`carousel-item ${i === 0 ? 'active' : ''}`} key={i}>
               <img src={item.img} className="d-block w-100" alt="Изображение слайдера" />
-              <div className="carousel-caption d-none d-md-block">
+              <div className="carousel-caption d-none d-md-block carousel-inner__caption">
                 <h5>{item.title}</h5>
                 <p>{item.subtitle}</p>
               </div>

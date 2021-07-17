@@ -67,9 +67,10 @@ footer {
 }
 .footer__menu {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: space-between;
+  width: 500px;
 }
 
 

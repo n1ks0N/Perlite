@@ -46,6 +46,32 @@ const Admin = () => {
       [param]: value
     } }))
   }
+  
+  const send = () => {
+    fb.firestore().collection('database').doc('admin').set({
+      pages: data
+    }, { merge: true })
+  }
+
+  const delInput = (type) => {
+    const category = type.split('.')[0]
+    const param = type.split('.')[1]
+    const arr = data[category].slice()
+    arr.splice(param, 1)
+    setData(prev => ({ ...prev, [category]: arr }))
+  }
+
+  const addInput = (type) => {
+    const category = type.split('.')[0]
+    const number = Number(type.split('.')[1])
+    const arr = data[category].slice()
+    const item = {}
+    Object.keys(arr[arr.length - 1]).map(key => item[key] = '')
+    arr.splice(number + 1, 0, item)
+    console.log(arr, number)
+    setData(prev => ({ ...prev, [category]: arr }))
+  }
+
   console.log(data)
   return (
     <div>
@@ -68,6 +94,9 @@ const Admin = () => {
             <input value={item.subtitle} className="form-control" onChange={(e) => itemChange(e.target, `main.subtitle.${i}`)} />
             <label>Изображение</label>
             <input value={item.img} className="form-control" onChange={(e) => itemChange(e.target, `main.img.${i}`)} /> 
+            <button type="button" className="btn btn-danger" onClick={() => delInput(`main.${i}`)}>-</button>
+            <br />
+            <button type="button" className="btn btn-success" onClick={() => addInput(`main.${i}`)}>+</button>
           </div>)}
           <h1>О нас</h1>
           {Object.entries(data.about).map((item, i) => 
@@ -84,6 +113,9 @@ const Admin = () => {
             <input value={item.subtitle} className="form-control" onChange={(e) => itemChange(e.target, `products.subtitle.${i}`)} />
             <label>Изображение</label>
             <input value={item.img} className="form-control" onChange={(e) => itemChange(e.target, `products.img.${i}`)} /> 
+            <button type="button" className="btn btn-danger" onClick={() => delInput(`products.${i}`)}>-</button>
+            <br />
+            <button type="button" className="btn btn-success" onClick={() => addInput(`main.${i}`)}>+</button>
           </div>)}
           <h1>Контакты</h1>
           {Object.entries(data.contacts).map((item, i) => 
@@ -91,6 +123,7 @@ const Admin = () => {
             <label>{item[0]}</label>
             <input value={item[1]} className="form-control" onChange={(e) => inputChange(e.target, `contacts.${item[0]}`)} />
           </div>)}
+          <button type="button" className="btn btn-primary btn-lg" onClick={send}>Отправить</button>
         </div>
       }
     </div>

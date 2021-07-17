@@ -4,3 +4,8 @@
 .w-100 {
   height: calc(100vh - 100px) !important;
 }
+
+.carousel-inner__caption h5 {
+  font-size: 35px;
+  font-family: 'Comfortaa';
+}
