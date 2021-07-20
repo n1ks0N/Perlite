@@ -3,7 +3,9 @@ import { Route, Switch, Link } from 'react-router-dom';
 import Main from '../pages/Main'
 import About from '../pages/About';
 import logo from '../utils/images/logo.jpg'
+import logoBlack from '../utils/images/logo.png'
 import './App.css';
+import '../pages/Pages.css'
 import Products from '../pages/Products';
 import Contacts from '../pages/Contacts';
 import Admin from './Admin';
@@ -65,7 +67,7 @@ by https://github.com/n1ks0N
       </main>
       <footer>
         <div>
-          <Link to="/"><img src={logo} className="header__logo_size" /></Link>
+          <Link to="/"><img src={logoBlack} className="header__logo_size" /></Link>
         </div>
         <menu className="footer__menu">
           <Link to="/"><li>Главная</li></Link>
@@ -76,7 +78,7 @@ by https://github.com/n1ks0N
         <div className="footer__contact">
           <a href={`tel:${contacts.tel}`}>{contacts.tel}</a>
           <a href={`mailto:${contacts.mail}`}>{contacts.mail}</a>
-          <a href="https://kwork.ru/user/n1ks_on" target="_blank">Создание сайтов — Nikson</a>
+          <a href="https://kwork.ru/user/n1ks_on" target="_blank" className="author">Создание сайтов — Nikson</a>
         </div>
       </footer>
       <div className="modal fade" id="modalCallback" tabIndex="-1" aria-labelledby="modalCallbackLabel" aria-hidden="true">

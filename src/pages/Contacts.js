@@ -5,7 +5,7 @@ const Contacts = () => {
   const { pages: { contacts } } = useSelector((store) => store.content)
   return (
     !!contacts &&
-    <div className="section">
+    <div className="section contacts">
       <h2 className="app__title">Контакты</h2>
       <div className="contacts__wrapper">
         <div className="contacts__form">
@@ -33,8 +33,13 @@ const Contacts = () => {
         <div className="contacts__info">
           <h3>Контактные данные:</h3>
           <div className="contacts__info__items">
-          <span><img src="https://img.icons8.com/ios-glyphs/30/000000/phone--v1.png"/>&nbsp;<a href={`tel:${contacts.phone}`}>{contacts.phone}</a></span>
-          <span><img src="https://img.icons8.com/ios-filled/24/000000/mail.png"/>&nbsp;<a href={`mailto:${contacts.email}`}>{contacts.email}</a></span>
+          <span>
+            {/* <img src="https://img.icons8.com/ios-glyphs/30/000000/phone--v1.png"/>&nbsp; */}
+          <a href={`tel:${contacts.phone}`}>{contacts.phone}</a></span>
+          <button type="button" className="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCallback">Обратный звонок</button>
+          <span>
+            {/* <img src="https://img.icons8.com/ios-filled/24/000000/mail.png"/>&nbsp; */}
+            <a href={`mailto:${contacts.email}`}>{contacts.email}</a></span>
           </div>
         </div>
       </div>

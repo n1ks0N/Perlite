@@ -1,8 +1,10 @@
-.main__wrapper {
-  height: 100vh;
-}
 .w-100 {
   height: calc(100vh - 100px) !important;
+}
+
+.carousel-inner__caption { 
+  background-color: #f2f2f2;
+  color: #000 !important;
 }
 
 .carousel-inner__caption h5 {
