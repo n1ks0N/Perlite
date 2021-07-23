@@ -39,6 +39,33 @@ Powered on ReactJS
 by https://github.com/n1ks0N
 			`);
   }, [])
+  const visible = (target) => {
+    // Все позиции элемента
+    let targetPosition = {
+        top: window.pageYOffset + target.getBoundingClientRect().top,
+        left: window.pageXOffset + target.getBoundingClientRect().left,
+        right: window.pageXOffset + target.getBoundingClientRect().right,
+        bottom: window.pageYOffset + target.getBoundingClientRect().bottom
+      },
+      // Получаем позиции окна
+      windowPosition = {
+        top: window.pageYOffset,
+        left: window.pageXOffset,
+        right: window.pageXOffset + document.documentElement.clientWidth,
+        bottom: window.pageYOffset + document.documentElement.clientHeight
+      };
+  
+    if (targetPosition.bottom > windowPosition.top && // Если позиция нижней части элемента больше позиции верхней чайти окна, то элемент виден сверху
+      targetPosition.top < windowPosition.bottom && // Если позиция верхней части элемента меньше позиции нижней чайти окна, то элемент виден снизу
+      targetPosition.right > windowPosition.left && // Если позиция правой стороны элемента больше позиции левой части окна, то элемент виден слева
+      targetPosition.left < windowPosition.right) { // Если позиция левой стороны элемента меньше позиции правой чайти окна, то элемент виден справа
+      // Если элемент полностью видно, то запускаем следующий код
+      console.log('Вы видите элемент :)');
+    } else {
+      // Если элемент не видно, то запускаем этот код
+      console.clear();
+    };
+  };
   return (
     <div className="app">
       <header>
@@ -52,7 +79,7 @@ by https://github.com/n1ks0N
           <Link to="/contacts"><li className="header__menu_item">Контакты</li></Link>
         </menu>
         <div className="header__contact">
-        <a href={`tel:${contacts.tel}`}><img src="https://img.icons8.com/ios-glyphs/30/000000/phone--v1.png"/>{contacts.tel}</a>
+        <a className="num" href={`tel:${contacts.tel}`}><img src="https://img.icons8.com/ios-glyphs/30/000000/phone--v1.png"/>{contacts.tel}</a>
           <button type="button" className="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCallback">Обратный звонок</button>
         </div>
       </header>
@@ -76,7 +103,7 @@ by https://github.com/n1ks0N
           <Link to="/contacts"><li>Контакты</li></Link>
         </menu>
         <div className="footer__contact">
-          <a href={`tel:${contacts.tel}`}>{contacts.tel}</a>
+          <a className="num" href={`tel:${contacts.tel}`}>{contacts.tel}</a>
           <a href={`mailto:${contacts.mail}`}>{contacts.mail}</a>
           <a href="https://kwork.ru/user/n1ks_on" target="_blank" className="author">Создание сайтов — Nikson</a>
         </div>

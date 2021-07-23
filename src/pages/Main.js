@@ -9,7 +9,7 @@ const Main = () => {
   const { pages: { main } } = useSelector(store => store.content)
   return (
     !!main && 
-    <div>
+    <div onWheel={() => console.log('ok')}>
       <div className="main__wrapper">
         <div id="carouselCaptions" className="carousel slide" data-bs-ride="carousel">
           <div className="carousel-indicators">

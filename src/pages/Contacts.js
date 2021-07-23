@@ -35,7 +35,7 @@ const Contacts = () => {
           <div className="contacts__info__items">
           <span>
             {/* <img src="https://img.icons8.com/ios-glyphs/30/000000/phone--v1.png"/>&nbsp; */}
-          <a href={`tel:${contacts.phone}`}>{contacts.phone}</a></span>
+          <a className="num" href={`tel:${contacts.phone}`}>{contacts.phone}</a></span>
           <button type="button" className="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCallback">Обратный звонок</button>
           <span>
             {/* <img src="https://img.icons8.com/ios-filled/24/000000/mail.png"/>&nbsp; */}
