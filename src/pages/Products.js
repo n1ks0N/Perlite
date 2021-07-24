@@ -6,7 +6,7 @@ const Products = ({ visible }) => {
   const [prod, setProd] = useState(0)
   return (
     !!products &&
-    <div className="section" onWheel={(e) => visible(e.currentTarget)}>
+    <div className="section products" onWheel={(e) => visible(e.currentTarget)}>
       <h2 className="app__title">Наша продукция</h2>
       <div className="products__wrapper">
         {products.map((item, i) =>

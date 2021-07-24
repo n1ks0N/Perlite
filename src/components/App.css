@@ -46,6 +46,7 @@ header {
 .header__menu a, .header__contact a {
   color: #000;
   text-decoration: none;
+  font-weight: bold;
 }
 
 

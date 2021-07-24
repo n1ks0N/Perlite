@@ -35,11 +35,11 @@ const Contacts = ({ visible }) => {
           <div className="contacts__info__items">
           <span>
             {/* <img src="https://img.icons8.com/ios-glyphs/30/000000/phone--v1.png"/>&nbsp; */}
-          <a className="num" href={`tel:${contacts.phone}`}>{contacts.phone}</a></span>
+          <a className="num contacts__info__item" href={`tel:${contacts.phone}`}>{contacts.phone}</a></span>
           <button type="button" className="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCallback">Обратный звонок</button>
           <span>
             {/* <img src="https://img.icons8.com/ios-filled/24/000000/mail.png"/>&nbsp; */}
-            <a href={`mailto:${contacts.email}`}>{contacts.email}</a></span>
+            <a className="contacts__info__item" href={`mailto:${contacts.email}`}>{contacts.email}</a></span>
           </div>
         </div>
       </div>
