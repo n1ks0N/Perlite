@@ -55,16 +55,11 @@ by https://github.com/n1ks0N
         bottom: window.pageYOffset + document.documentElement.clientHeight
       };
   
-    if (targetPosition.bottom > windowPosition.top && // Если позиция нижней части элемента больше позиции верхней чайти окна, то элемент виден сверху
-      targetPosition.top < windowPosition.bottom && // Если позиция верхней части элемента меньше позиции нижней чайти окна, то элемент виден снизу
-      targetPosition.right > windowPosition.left && // Если позиция правой стороны элемента больше позиции левой части окна, то элемент виден слева
-      targetPosition.left < windowPosition.right) { // Если позиция левой стороны элемента меньше позиции правой чайти окна, то элемент виден справа
+    if (targetPosition.bottom > windowPosition.top) // Если позиция нижней части элемента больше позиции верхней чайти окна, то элемент виден сверху
+      { // Если позиция левой стороны элемента меньше позиции правой чайти окна, то элемент виден справа
       // Если элемент полностью видно, то запускаем следующий код
-      console.log('Вы видите элемент :)');
-    } else {
-      // Если элемент не видно, то запускаем этот код
-      console.clear();
-    };
+      target.classList.add('fade-in');
+    }
   };
   return (
     <div className="app">
@@ -86,10 +81,10 @@ by https://github.com/n1ks0N
       <main>
         <Switch>
           <Route path="/admin" component={Admin} />
-          <Route path="/about" component={About} />
-          <Route path="/products" component={Products} />
-          <Route path="/contacts" component={Contacts} />
-          <Route path="*" component={Main} />
+          <Route path="/about" render={() => <About visible={visible} />} />
+          <Route path="/products" render={() => <Products visible={visible} />} />
+          <Route path="/contacts" render={() => <Contacts visible={visible} />} />
+          <Route path="*" render={() => <Main visible={visible} />} />
         </Switch>
       </main>
       <footer>

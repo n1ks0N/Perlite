@@ -1,11 +1,11 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-const Contacts = () => {
+const Contacts = ({ visible }) => {
   const { pages: { contacts } } = useSelector((store) => store.content)
   return (
     !!contacts &&
-    <div className="section contacts">
+    <div className="section contacts" onWheel={(e) => visible(e.currentTarget)}>
       <h2 className="app__title">Контакты</h2>
       <div className="contacts__wrapper">
         <div className="contacts__form">

@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 
-const Products = () => {
+const Products = ({ visible }) => {
   const { pages: { products } } = useSelector((store) => store.content)
   const [prod, setProd] = useState(0)
   return (
     !!products &&
-    <div className="section">
+    <div className="section" onWheel={(e) => visible(e.currentTarget)}>
       <h2 className="app__title">Наша продукция</h2>
       <div className="products__wrapper">
         {products.map((item, i) =>

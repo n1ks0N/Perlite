@@ -5,11 +5,11 @@ import Contacts from './Contacts'
 import './Main.css'
 import { useSelector } from 'react-redux'
 
-const Main = () => {
+const Main = ({ visible }) => {
   const { pages: { main } } = useSelector(store => store.content)
   return (
     !!main && 
-    <div onWheel={() => console.log('ok')}>
+    <div>
       <div className="main__wrapper">
         <div id="carouselCaptions" className="carousel slide" data-bs-ride="carousel">
           <div className="carousel-indicators">
@@ -36,9 +36,9 @@ const Main = () => {
           </button>
         </div>
       </div>
-      <About />
-      <Products />
-      <Contacts />
+      <About visible={visible} />
+      <Products visible={visible} />
+      <Contacts visible={visible} />
       </div>
   );
 }
